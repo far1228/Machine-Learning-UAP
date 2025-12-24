@@ -1,0 +1,6 @@
+# Model files
+*.h5
+*.pkl
+*.safetensors
+dashboardUAP/models/
+
