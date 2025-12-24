@@ -24,27 +24,80 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# Load Custom CSS
-def load_css():
-    with open("style/style.css") as f:
-        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+# =============================
+# INLINE CSS (GABUNG TOTAL)
+# =============================
+st.markdown("""
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
-try:
-    load_css()
-except:
-    st.warning("⚠️ File CSS tidak ditemukan. Pastikan file 'style/style.css' ada.")
+* { font-family: 'Inter', sans-serif; }
 
-# Header Section
+html, body, [data-testid="stAppViewContainer"] {
+    background: linear-gradient(135deg, #FFF5F7 0%, #FCE7F3 50%, #FBCFE8 100%) !important;
+}
+
+h1 {
+    font-family: 'Space Grotesk', sans-serif !important;
+    background: linear-gradient(135deg, #F9A8D4 0%, #F472B6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.stButton > button {
+    background: linear-gradient(135deg, #F9A8D4 0%, #F472B6 100%);
+    color: white;
+    font-weight: 600;
+    padding: 0.8rem 1.8rem;
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 4px 14px rgba(249,168,212,0.4);
+    width: 100%;
+}
+
+.stButton > button:hover {
+    background: linear-gradient(135deg, #F472B6 0%, #EC4899 100%);
+    transform: translateY(-2px);
+}
+
+textarea {
+    border-radius: 12px !important;
+}
+
+div[data-testid="stSuccess"] {
+    background: #FFF7ED;
+    border-left: 4px solid #FB923C;
+    border-radius: 12px;
+}
+
+div[data-testid="stWarning"] {
+    background: #FEF3C7;
+    border-left: 4px solid #FBBF24;
+    border-radius: 12px;
+}
+
+div[data-testid="stError"] {
+    background: #FEE2E2;
+    border-left: 4px solid #F87171;
+    border-radius: 12px;
+}
+</style>
+""", unsafe_allow_html=True)
+
+# =============================
+# HEADER
+# =============================
 st.markdown("# 🎯 Sentiment Analysis")
 st.caption("Machine Learning Dashboard — Ujian Akhir Praktikum")
-
 st.markdown("<br>", unsafe_allow_html=True)
 
 # =============================
 # PREPROCESSING
 # =============================
 def clean_text(text):
-    """Membersihkan teks dari URL, mention, dan karakter khusus"""
     text = text.lower()
     text = re.sub(r"http\S+", "", text)
     text = re.sub(r"@\w+", "", text)
@@ -59,28 +112,25 @@ EMOJI_MAP = {0: "😞", 1: "😐", 2: "😊"}
 # =============================
 @st.cache_resource
 def load_lstm():
-    with st.spinner("⏳ Loading LSTM model..."):
-        model = tf.keras.models.load_model("models/lstm_model.h5")
-        with open("models/tokenizer_lstm.pkl", "rb") as f:
-            tokenizer = pickle.load(f)
+    model = tf.keras.models.load_model("models/lstm_model.h5")
+    with open("models/tokenizer_lstm.pkl", "rb") as f:
+        tokenizer = pickle.load(f)
     return model, tokenizer
 
 @st.cache_resource
 def load_distilbert():
-    with st.spinner("⏳ Loading DistilBERT model..."):
-        path = "models/bertmodels/distilbert"
-        tokenizer = DistilBertTokenizerFast.from_pretrained(path)
-        model = DistilBertForSequenceClassification.from_pretrained(path)
-        model.eval()
+    path = "models/bertmodels/distilbert"
+    tokenizer = DistilBertTokenizerFast.from_pretrained(path)
+    model = DistilBertForSequenceClassification.from_pretrained(path)
+    model.eval()
     return model, tokenizer
 
 @st.cache_resource
 def load_bert():
-    with st.spinner("⏳ Loading BERT model..."):
-        path = "models/bertmodels/bert"
-        tokenizer = BertTokenizerFast.from_pretrained(path)
-        model = BertForSequenceClassification.from_pretrained(path)
-        model.eval()
+    path = "models/bertmodels/bert"
+    tokenizer = BertTokenizerFast.from_pretrained(path)
+    model = BertForSequenceClassification.from_pretrained(path)
+    model.eval()
     return model, tokenizer
 
 # =============================
@@ -93,30 +143,16 @@ col1, col2 = st.columns(2)
 with col1:
     model_choice = st.selectbox(
         "Select Model",
-        ["LSTM", "DistilBERT", "BERT"],
-        help="Choose the model for sentiment analysis"
+        ["LSTM", "DistilBERT", "BERT"]
     )
 
 with col2:
     mode = st.radio(
         "Input Mode",
-        ["Input Manual", "Batch (Dataset Bersih)"],
-        help="Select input method"
+        ["Input Manual", "Batch (Dataset Bersih)"]
     )
 
-use_cleaning = st.checkbox(
-    "Enable text preprocessing",
-    value=True,
-    help="Clean text from URLs, mentions, and special characters"
-)
-
-model_descriptions = {
-    "LSTM": {"desc": "Sequential model optimized for text processing", "icon": "🔄"},
-    "DistilBERT": {"desc": "Lightweight transformer model", "icon": "⚡"},
-    "BERT": {"desc": "State-of-the-art transformer model", "icon": "🚀"}
-}
-
-st.info(f"{model_descriptions[model_choice]['icon']} **{model_choice}:** {model_descriptions[model_choice]['desc']}")
+use_cleaning = st.checkbox("Enable text preprocessing", value=True)
 
 st.markdown("---")
 
@@ -129,7 +165,7 @@ if mode == "Input Manual":
     text = st.text_area(
         "Enter your text",
         height=150,
-        placeholder="Example: I love this product!",
+        placeholder="Example: I love this product!"
     )
 
     if st.button("🔍 Analyze Sentiment"):
@@ -166,9 +202,7 @@ else:
     st.info("📁 Dataset: **data/clean_tweets.csv**")
 
     try:
-        # 🔴 INI SATU-SATUNYA BARIS YANG DIBENARKAN
         df = pd.read_csv("data/clean_tweets.csv", sep=";")
-
         st.dataframe(df.head(10), use_container_width=True)
 
         if st.button("🔍 Run Batch Prediction"):
