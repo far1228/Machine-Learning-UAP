@@ -77,7 +77,8 @@ Evaluasi performa model dilakukan secara menyeluruh sesuai dengan ketentuan Modu
 - **Confusion Matrix**, untuk menganalisis kesalahan prediksi model pada masing-masing kelas.
 - **Grafik Loss dan Accuracy**, yang digunakan untuk memantau proses pelatihan dan validasi model selama training.
 
-Evaluasi ini diterapkan pada ketiga model, yaitu model **Non-Pretrained (LSTM)** serta dua model **Pretrained (DistilBERT dan BERT)**, sehingga perbandingan performa dapat dilakukan secara objektif.
+Evaluasi ini diterapkan pada ketiga model, yaitu model **Non-Pretrained (LSTM)** serta dua model **Pretrained (DistilBERT dan BERT)**, sehingga perbandingan performa dapat dilakukan secara objektif. Seluruh hasil evaluasi seperti confusion matrix dan grafik performa disimpan dan dapat dilihat pada folder **results/** di repository ini.
+
 
 ---
 
@@ -97,6 +98,8 @@ Evaluasi ini diterapkan pada ketiga model, yaitu model **Non-Pretrained (LSTM)**
    http://localhost:8501
    ```
 ## 📁 **Struktur Repositori**
+Struktur repository disusun untuk memisahkan data, model, hasil evaluasi, serta kode aplikasi agar mudah dipahami dan dikelola. Setiap folder memiliki peran masing-masing dalam proses pengembangan dan evaluasi model.
+
 
 ```text
 📦 Machine-Learning-UAP
@@ -111,6 +114,14 @@ Evaluasi ini diterapkan pada ketiga model, yaitu model **Non-Pretrained (LSTM)**
  ┣ 📜 requirements.txt
  ┗ 📜 README.md
 ```
+
+Keterangan folder:
+- **data/** : Berisi dataset hasil preprocessing yang digunakan dalam pelatihan dan evaluasi model.
+- **models/** : Menyimpan model yang telah dilatih, termasuk model LSTM, DistilBERT, dan BERT.
+- **results/** : Berisi hasil evaluasi model seperti confusion matrix, grafik loss, dan grafik accuracy.
+- **UAP_Machine_Learning_fix.ipynb** : Notebook utama untuk proses pelatihan, evaluasi, dan analisis model.
+- **app.py** : File utama untuk menjalankan aplikasi Streamlit.
+
 
 ## **✅ Kesimpulan**
 Berdasarkan hasil evaluasi, dapat disimpulkan bahwa:
@@ -136,6 +147,7 @@ Berdasarkan hasil evaluasi, dapat disimpulkan bahwa:
   Program Studi Informatika<br>
   Universitas Muhammadiyah Malang
 </p>
+
 
 
 
