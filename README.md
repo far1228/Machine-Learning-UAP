@@ -104,12 +104,14 @@ Evaluasi dilakukan menggunakan:
 - Confusion Matrix
 - Grafik Loss dan Accuracy
 
-### Tabel Perbandingan Model
+### 📊 Tabel Perbandingan Model
+
 | Model | Akurasi | Analisis |
 |------|--------|---------|
-| LSTM (Non-Pretrained) | ±80% | Baseline cukup baik namun kurang memahami konteks panjang |
-| DistilBERT | ±85% | Stabil dan efisien |
-| BERT | **±88%** | Akurasi tertinggi dan performa terbaik |
+| **LSTM (Non-Pretrained)** | **78%** | Digunakan sebagai baseline. Performa cukup baik, namun kurang mampu menangkap konteks kalimat secara mendalam karena tidak menggunakan pretrained embedding. |
+| **DistilBERT** | **84%** | Menunjukkan performa yang stabil dan efisien. Mampu memberikan akurasi tinggi meskipun arsitekturnya lebih ringan dibandingkan BERT. |
+| **BERT** | **84%** | Memberikan performa terbaik secara keseluruhan. Unggul dalam memahami konteks sentimen, meskipun pada dataset ini peningkatannya relatif kecil dibandingkan DistilBERT. |
+
 
 ---
 
@@ -149,8 +151,9 @@ http://localhost:8501
 📌 Kesimpulan
 
 Berdasarkan hasil evaluasi, model BERT memberikan performa terbaik dalam analisis sentimen tweet maskapai penerbangan. Seluruh tahapan proyek telah sesuai dengan ketentuan Ujian Akhir Praktikum Pembelajaran Mesin.
+---
 
-📚 Referensi
+##📚 Referensi
 
 Kaggle – Twitter Airline Sentiment
 
@@ -159,3 +162,4 @@ HuggingFace Transformers Documentation
 TensorFlow & Keras Documentation
 
 Modul UAP Pembelajaran Mesin
+
