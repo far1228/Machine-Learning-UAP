@@ -130,9 +130,9 @@ Aplikasi dijalankan **secara lokal**, sesuai ketentuan UAP.
 ### 1. Install Dependency
 ```bash
 pip install -r requirements.txt
-**2. Jalankan Streamlit**
+2. Jalankan Streamlit
 streamlit run app.py
-**3. Akses Aplikasi**
+3. Akses Aplikasi
 http://localhost:8501
 
 📁 Struktur Repository
@@ -162,4 +162,5 @@ HuggingFace Transformers Documentation
 TensorFlow & Keras Documentation
 
 Modul UAP Pembelajaran Mesin
+
 
