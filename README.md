@@ -103,24 +103,54 @@ Struktur repository disusun untuk memisahkan data, model, hasil evaluasi, serta 
 
 ```text
 📦 Machine-Learning-UAP
- ┣ 📂 dashboardUAP
- ┃ ┣ 📂 data
- ┃ ┃ ┗ 📜 clean_tweets.csv
- ┃ ┣ 📂 bert_models
- ┃ ┃ ┣ 📂 bert
- ┃ ┃ ┗ 📂 distilbert
- ┃ ┗ 📜 app.py
- ┣ 📜 uap_machine_learning_fix.py
- ┣ 📜 requirements.txt
- ┗ 📜 README.md
+│
+├── 📂 data
+│   └── 📄 clean_tweets.csv
+│
+├── 📂 models
+│   ├── 🤖 lstm
+│   │   ├── 🧠 lstm_model.h5
+│   │   └── 🔤 tokenizer_lstm.pkl
+│   │
+│   ├── 🤗 bert
+│   │   ├── ⚙️ config.json
+│   │   ├── 🧠 pytorch_model.bin
+│   │   └── 🔤 tokenizer.json
+│   │
+│   └── ⚡ distilbert
+│       ├── ⚙️ config.json
+│       ├── 🧠 pytorch_model.bin
+│       └── 🔤 tokenizer.json
+│
+├── 📂 results
+│   ├── 📊 accuracy_metrics
+│   ├── 📈 confusion_matrix
+│   └── 🖼️ visualizations
+│
+├── 🚀 app.py
+│
+├── 📜 requirements.txt
+│
+├── 📓 UAP_Machine_Learning_fix.ipynb
+│
+├── 📝 README.md
+│
+└── ⚙️ .gitignore
+
 ```
 
 Keterangan folder:
-- **data/** : Berisi dataset hasil preprocessing yang digunakan dalam pelatihan dan evaluasi model.
-- **models/** : Menyimpan model yang telah dilatih, termasuk model LSTM, DistilBERT, dan BERT.
-- **results/** : Berisi hasil evaluasi model seperti confusion matrix, grafik loss, dan grafik accuracy.
-- **UAP_Machine_Learning_fix.ipynb** : Notebook utama untuk proses pelatihan, evaluasi, dan analisis model.
-- **app.py** : File utama untuk menjalankan aplikasi Streamlit.
+**📂 data** → Dataset hasil preprocessing
+
+**🤖 models** → Tiga model klasifikasi sentimen (LSTM, DistilBERT, BERT)
+
+**📊 results** → Hasil evaluasi & visualisasi performa
+
+**🚀 app.py** → Aplikasi Streamlit (dashboard UAP)
+
+**📓 Notebook** → Proses training & eksperimen
+
+**⚙️ .gitignore** → Pengaturan file yang diabaikan Git
 
 
 ## **✅ Kesimpulan**
@@ -148,6 +178,7 @@ Berdasarkan hasil evaluasi, dapat disimpulkan bahwa:
   Program Studi Informatika<br>
   Universitas Muhammadiyah Malang
 </p>
+
 
 
 
