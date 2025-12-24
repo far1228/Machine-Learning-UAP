@@ -1,1 +1,10 @@
+*.h5
+*.pkl
 
+# Python cache
+__pycache__/
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
