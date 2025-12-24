@@ -64,6 +64,15 @@ Sesuai ketentuan modul UAP, proyek ini mengimplementasikan 3 model:
 | **DistilBERT** | 84% | Performa sangat stabil dan efisien meskipun arsitektur ringan. |
 | **BERT** | **84%** | Performa terbaik dalam memahami konteks sentimen yang kompleks. |
 
+### 🔍 Metode Evaluasi Model
+Evaluasi performa model dilakukan secara menyeluruh sesuai dengan ketentuan Modul UAP Pembelajaran Mesin. Metrik evaluasi yang digunakan meliputi:
+
+- **Classification Report**, yang mencakup nilai Accuracy, Precision, Recall, dan F1-Score untuk setiap kelas sentimen.
+- **Confusion Matrix**, untuk menganalisis kesalahan prediksi model pada masing-masing kelas.
+- **Grafik Loss dan Accuracy**, yang digunakan untuk memantau proses pelatihan dan validasi model selama training.
+
+Evaluasi ini diterapkan pada ketiga model, yaitu model **Non-Pretrained (LSTM)** serta dua model **Pretrained (DistilBERT dan BERT)**, sehingga perbandingan performa dapat dilakukan secara objektif.
+
 ---
 
 ## ▶️ Cara Menjalankan Aplikasi
@@ -113,7 +122,13 @@ Berdasarkan hasil evaluasi, dapat disimpulkan bahwa:
 **Dokumentasi:** [HuggingFace Transformers](https://huggingface.co/docs/transformers) & [TensorFlow](https://www.tensorflow.org/)
 * **Akademik:** Modul UAP Pembelajaran Mesin - Universitas Muhammadiyah Malang
 
+---
+
 <p align="center">
-  <br>
-  <b>Informatika - Universitas Muhammadiyah Malang</b>
+  <b>Qinada Farah</b><br>
+  NIM: 202210270311489<br>
+  Program Studi Informatika<br>
+  Universitas Muhammadiyah Malang
 </p>
+
+
