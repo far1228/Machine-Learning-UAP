@@ -137,7 +137,8 @@ Berdasarkan hasil evaluasi, dapat disimpulkan bahwa:
 **Dataset**: [Twitter Airline Sentiment (Kaggle)](https://www.kaggle.com/datasets/crowdflower/twitter-airline-sentiment)
 
 **Dokumentasi:** [HuggingFace Transformers](https://huggingface.co/docs/transformers) & [TensorFlow](https://www.tensorflow.org/)
-* **Akademik:** Modul UAP Pembelajaran Mesin - Universitas Muhammadiyah Malang
+
+**Akademik:** Modul UAP Pembelajaran Mesin - Universitas Muhammadiyah Malang
 
 ---
 
@@ -147,6 +148,7 @@ Berdasarkan hasil evaluasi, dapat disimpulkan bahwa:
   Program Studi Informatika<br>
   Universitas Muhammadiyah Malang
 </p>
+
 
 
 
