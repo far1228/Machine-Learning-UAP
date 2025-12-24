@@ -1,4 +1,10 @@
 # ✈️ Analisis Sentimen Twitter Maskapai Penerbangan
+
+![Python](https://img.shields.io/badge/Python-3.9+-blue)
+![Streamlit](https://img.shields.io/badge/Streamlit-App-red)
+![NLP](https://img.shields.io/badge/NLP-Sentiment%20Analysis-green)
+![Deep Learning](https://img.shields.io/badge/Deep%20Learning-LSTM%20%7C%20BERT-orange)
+
 ### Ujian Akhir Praktikum (UAP) Pembelajaran Mesin
 
 ---
@@ -130,5 +136,6 @@ Berdasarkan hasil evaluasi, dapat disimpulkan bahwa:
   Program Studi Informatika<br>
   Universitas Muhammadiyah Malang
 </p>
+
 
 
