@@ -1,55 +1,52 @@
-# ✈️ Twitter Airline Sentiment Analysis Dashboard
-**Ujian Akhir Praktikum (UAP) – Pembelajaran Mesin**
+# ✈️ Twitter Airline Sentiment Analysis
+Ujian Akhir Praktikum (UAP) – Pembelajaran Mesin
 
 ---
 
-## 📌 Deskripsi Proyek
-Proyek ini merupakan implementasi **Sistem Website Sederhana berbasis Pembelajaran Mesin** untuk melakukan **analisis sentimen pada tweet maskapai penerbangan**.  
-Sistem mengklasifikasikan sentimen tweet ke dalam tiga kelas, yaitu **Negative**, **Neutral**, dan **Positive**.
+## 📖 Overview
+This project implements a **machine learning–based sentiment analysis system** for airline-related tweets.
+The system classifies tweets into **Negative**, **Neutral**, or **Positive** sentiment categories.
 
-Aplikasi dibangun menggunakan **Streamlit** dan mengintegrasikan **tiga model pembelajaran mesin**, yaitu:
-1. Neural Network Non-Pretrained (LSTM)
-2. Model Pretrained 1 (DistilBERT)
-3. Model Pretrained 2 (BERT)
+The application is built as a **simple web-based system using Streamlit** and integrates:
+- One **Non-Pretrained Neural Network model (LSTM)**
+- Two **Pretrained models (DistilBERT and BERT)** using transfer learning
 
-Pengguna dapat melakukan prediksi sentimen melalui **input teks manual** maupun **batch prediction menggunakan dataset**, sesuai dengan implementasi pada file `app.py`.
+This project is developed to fully satisfy the requirements of the **Final Practical Exam (UAP)** for the *Machine Learning* course.
 
 ---
 
 ## 📂 Dataset
-- **Nama Dataset** : Twitter Airline Sentiment  
-- **Jenis Data** : Data Teks (Text Data)  
-- **Jumlah Data** : ±14.000 tweet  
-- **Kelas Sentimen** :
+- **Dataset Name**: Twitter Airline Sentiment
+- **Data Type**: Text Data
+- **Total Samples**: ±14,000 tweets
+- **Sentiment Classes**:
   - Negative
   - Neutral
-  - Positive  
+  - Positive
 
-### 🔗 Sumber Dataset
-Dataset diperoleh dari Kaggle (CrowdFlower):  
-https://www.kaggle.com/datasets/crowdflower/twitter-airline-sentiment  
-
-Dataset ini bersifat **open-access** dan umum digunakan untuk penelitian analisis sentimen.
+### Data Source
+The dataset is publicly available on Kaggle:
+https://www.kaggle.com/datasets/crowdflower/twitter-airline-sentiment
 
 ---
 
-## 🧹 Preprocessing Data
-Tahapan preprocessing teks yang digunakan (sesuai `app.py`):
-- Mengubah teks menjadi huruf kecil
-- Menghapus URL
-- Menghapus mention (@username)
-- Menghapus angka dan karakter non-alfabet
-- Menghilangkan spasi berlebih
+## 🧹 Text Preprocessing
+Text preprocessing steps applied in this project:
+- Convert text to lowercase
+- Remove URLs
+- Remove user mentions (@username)
+- Remove numbers and non-alphabet characters
+- Trim extra whitespace
 
-Preprocessing dapat **diaktifkan atau dinonaktifkan** melalui checkbox pada aplikasi Streamlit.
+Preprocessing can be enabled or disabled directly from the Streamlit interface.
 
 ---
 
-## 🧠 Model yang Digunakan
+## 🧠 Models Implementation
 
-### 1️⃣ Neural Network Non-Pretrained — LSTM
-- Framework: TensorFlow / Keras  
-- Model dilatih dari awal (from scratch) tanpa bobot pretrained  
-- Digunakan sebagai model baseline  
+### 🔹 LSTM (Non-Pretrained Model)
+- Framework: TensorFlow / Keras
+- Trained from scratch without pretrained weights
+- Used as a baseline model for comparison
 
-File model:
+Saved model files:
