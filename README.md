@@ -80,5 +80,40 @@ Sesuai ketentuan modul UAP, proyek ini mengimplementasikan 3 model:
    Buka browser dan akses:
    ```bash
    http://localhost:8501
+   ```
+## 📁 **Struktur Repositori**
 
+```text
+📦 Machine-Learning-UAP
+ ┣ 📂 dashboardUAP
+ ┃ ┣ 📂 data
+ ┃ ┃ ┗ 📜 clean_tweets.csv
+ ┃ ┣ 📂 bert_models
+ ┃ ┃ ┣ 📂 bert
+ ┃ ┃ ┗ 📂 distilbert
+ ┃ ┗ 📜 app.py
+ ┣ 📜 uap_machine_learning_fix.py
+ ┣ 📜 requirements.txt
+ ┗ 📜 README.md
 ```
+
+## **✅ Kesimpulan**
+Berdasarkan hasil evaluasi, dapat disimpulkan bahwa:
+
+**- Model BERT** memberikan performa paling stabil dengan akurasi 84%.
+
+**-** Implementasi **Transfer Learning** terbukti jauh lebih efektif untuk data teks kompleks dibandingkan model baseline.
+
+**-** Seluruh tahapan proyek telah dilaksanakan sesuai dengan ketentuan **Ujian Akhir Praktikum (UAP)**.
+
+## **📚 Referensi**
+
+**Dataset**: [Twitter Airline Sentiment (Kaggle)](https://www.kaggle.com/datasets/crowdflower/twitter-airline-sentiment)
+
+**Dokumentasi:** [HuggingFace Transformers](https://huggingface.co/docs/transformers) & [TensorFlow](https://www.tensorflow.org/)
+* **Akademik:** Modul UAP Pembelajaran Mesin - Universitas Muhammadiyah Malang
+
+<p align="center">
+  <br>
+  <b>Informatika - Universitas Muhammadiyah Malang</b>
+</p>
