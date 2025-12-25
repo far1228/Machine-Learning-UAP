@@ -67,7 +67,7 @@ Sesuai ketentuan modul UAP, proyek ini mengimplementasikan 3 model:
 | Model | Akurasi | Analisis |
 | :--- | :---: | :--- |
 | **LSTM** | 78% | Cukup baik sebagai baseline, namun kurang menangkap konteks mendalam. |
-| **DistilBERT** | 84% | Performa sangat stabil dan efisien meskipun arsitektur ringan. |
+| **DistilBERT** | 83% | Performa sangat stabil dan efisien meskipun arsitektur ringan. |
 | **BERT** | **84%** | Performa terbaik dalam memahami konteks sentimen yang kompleks. |
 
 ### 🔍 Metode Evaluasi Model
@@ -178,6 +178,7 @@ Berdasarkan hasil evaluasi, dapat disimpulkan bahwa:
   Program Studi Informatika<br>
   Universitas Muhammadiyah Malang
 </p>
+
 
 
 
